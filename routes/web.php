@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,18 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+Route::get('/', [PageController::class, 'index'])->name('index');
 
-Route::get('/planocurricular', function () {
-    return view('planocurricular');
-})->name('planocurricular');
+Route::get('/planocurricular', [PageController::class, 'planocurricular'])->name('planocurricular');
 
-Route::get('/projetos', function () {
-    return view('projetos');
-})->name('projetos');
+Route::get('/projetos', [PageController::class, 'projetos'])->name('projetos');
 
-Route::get('/contactos', function () {
-    return view('contactos');
-})->name('contactos');
+Route::get('/contactos', [PageController::class, 'contactos'])->name('contactos');
